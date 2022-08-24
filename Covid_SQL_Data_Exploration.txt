@@ -120,9 +120,9 @@ Select
   SUM(CONVERT(int,vac.new_vaccinations)) OVER (Partition by dea.Location Order by dea.location, dea.Date) as RollingPeopleVaccinated
 --, (RollingPeopleVaccinated/population)*100
 From 
-  dataanalysttraining.covid_deaths dea
+  dataanalysttraining.CovidPortfolio.covid_deaths dea
 Join 
-  dataanalysttraining.covid_vaccinations vac
+  dataanalysttraining.CovidPortfolio.covid_vaccinations vac
 	On dea.location = vac.location
 	and dea.date = vac.date
 where 
